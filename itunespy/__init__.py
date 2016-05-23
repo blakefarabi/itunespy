@@ -52,9 +52,6 @@ def search(term, country='US', media='all', entity=None, attribute=None, limit=5
     except:
         raise ConnectionError(general_no_connection)
 
-    if result_count == 0:
-        raise LookupError(search_error + str(term))
-
     return _get_result_list(json)
 
 # --------
@@ -103,7 +100,7 @@ def search_artist(term, country='US', attribute=None, limit=50):
 def search_album(term, country='US', attribute=None, limit=50):
     return search(term, country, 'music', entities['album'], attribute, limit)
 
-def search_track(term, country='US', attribute=None, limit=50):
+def search_track(term, country='US', attribute=None, limit=1):
     return search(term, country, 'music', entities['song'], attribute, limit)
 
 def lookup_artist(id=None, artist_amg_id=None, upc=None, country='US', attribute=None, limit=50):
