@@ -45,7 +45,7 @@ def search(term, country='US', media='all', entity=None, attribute=None, limit=5
     :return: An array of result_item(s)
     """
     search_url = _url_search_builder(term, country, media, entity, attribute, limit)
-    r = requests.get(search_url)
+    r = requests.request('GET', search_url)
 
     try:
         json = r.json()['results']
@@ -78,8 +78,7 @@ def lookup(id=None, artist_amg_id=None, upc=None, country='US', media='all', ent
         raise ValueError(lookup_no_ids)
 
     lookup_url = _url_lookup_builder(id, artist_amg_id, upc, country, media, entity, attribute, limit)
-    r = requests.get(lookup_url)
-
+    r = requests.request('GET', lookup_url)
     try:
         json = r.json()['results']
         result_count = r.json()['resultCount']
