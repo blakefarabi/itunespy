@@ -1,3 +1,4 @@
+# coding=utf-8
 #!/usr/bin/python
 # Made with <3 by Fran González (@spaceisstrange)
 # This program is free software: you can redistribute it and/or modify
