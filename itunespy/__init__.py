@@ -13,7 +13,7 @@
 #  copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 
-import requests
+from requests import *
 from itunespy import music_artist
 from itunespy import music_album
 from itunespy import movie_artist
